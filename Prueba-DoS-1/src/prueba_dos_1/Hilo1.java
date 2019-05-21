@@ -23,7 +23,7 @@ public class Hilo1 extends Thread {
             salida = new DataOutputStream(cliente.getOutputStream());
             System.out.println("Creada salida de datos");
             for(int i=0; i<10; i++){
-                salida.writeUTF("Hola tia");
+                salida.writeUTF("Hola");
                 System.out.println("Mensaje escrito");
                 salida.flush();
             }

@@ -19,7 +19,7 @@ public class Hilo3 extends Thread {
         try {
             socket = new DatagramSocket();
             System.out.println("Conectado al servidor");
-            buf = "Hola tia".getBytes();
+            buf = "Hola".getBytes();
             System.out.println("buf creado");
             paquete = new DatagramPacket(buf, buf.length, servidor, 443);
             System.out.println("Creada salida de datos");
