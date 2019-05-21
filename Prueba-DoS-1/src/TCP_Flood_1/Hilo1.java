@@ -1,4 +1,4 @@
-package prueba_dos_1;
+package TCP_Flood_1;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

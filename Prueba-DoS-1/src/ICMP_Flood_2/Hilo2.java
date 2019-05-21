@@ -1,4 +1,4 @@
-package prueba_dos_2;
+package ICMP_Flood_2;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -14,7 +14,7 @@ public class Hilo2 extends Thread {
     public void run(){
         try {
             while (true) {
-                if (servidor.isReachable(10000)) {
+                if (servidor.isReachable(5000)) {
                     System.out.println("Reachable");
                 } else {
                     System.out.println("Not reachable");

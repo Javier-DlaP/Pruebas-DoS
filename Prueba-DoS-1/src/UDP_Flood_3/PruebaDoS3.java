@@ -1,6 +1,5 @@
-package prueba_dos_3;
+package UDP_Flood_3;
 
-import prueba_dos_1.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.concurrent.ExecutorService;
