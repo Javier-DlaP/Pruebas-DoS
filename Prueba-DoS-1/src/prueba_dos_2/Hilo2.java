@@ -3,11 +3,11 @@ package prueba_dos_2;
 import java.io.IOException;
 import java.net.InetAddress;
 
-public class Hilo extends Thread {
+public class Hilo2 extends Thread {
 
     private InetAddress servidor;
 
-    public Hilo(InetAddress servidor) {
+    public Hilo2(InetAddress servidor) {
         this.servidor = servidor;
     }
     

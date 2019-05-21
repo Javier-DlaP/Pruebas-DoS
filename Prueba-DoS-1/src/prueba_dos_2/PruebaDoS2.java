@@ -11,11 +11,11 @@ public class PruebaDoS2 {
         InetAddress servidor;
         ExecutorService pool = Executors.newFixedThreadPool(200);
         try {
-            servidor = InetAddress.getByName("95.60.240.202");
+            servidor = InetAddress.getByName("216.58.201.163");
             System.out.println("Obtenida ip del servidor");
             System.out.println(servidor);
             while(true){
-                pool.execute(new Hilo(servidor));
+                pool.execute(new Hilo2(servidor));
             }
         } catch (IOException e) {
             System.out.println("Error al conectarse con el servidor");
