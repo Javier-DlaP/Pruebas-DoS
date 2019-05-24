@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 public class Hilo5 extends Thread{
     ProcessBuilder builder;
 
-    public Hilo5(ProcessBuilder builder) {
-        this.builder = builder;
+    public Hilo5() {
+        builder = new ProcessBuilder("cmd.exe", "/c", "ping 192.168.1.34 -l 65500 -n 1000 -w 1");
+        builder.redirectErrorStream(true);
     }
     
     @Override

